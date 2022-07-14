@@ -139,3 +139,41 @@ docker create --name <name_container> -p<port_host>:<port_container> -e <NAME_VA
 docker create --name mongoDB -p27018:27017 -e MONGO_INITDB_ROOT_USERNAME=mario -e MONGO_INITDB_ROOT_PASSWORD=12345678 mongo #Ejemplo
 ```
 
+## 🌐 Red Interna en Docker
+
+### Crear una red interna
+
+```sh
+docker network create <name_network>
+
+docker network create my-red #Ejemplo
+```
+
+### Listar todas las redes internas
+
+```sh
+docker network ls
+```
+
+### Eliminar la red interna
+
+```sh
+docker network rm <name_network>
+
+docker network rm my-red #Ejemplo
+```
+
+## ✍️ Dockerfile
+
+### Comando para construir la imágen a partir del archivo Dockerfile
+
+El parámetro <code>-t</code> significa identificar con nombre y tag a la construcción de la imágen
+
+```sh
+docker build -t <name_image>:<tag_name> <path_to_dockerfile>
+
+docker build -t myApp:1 . #Ejemplo
+```
+
+## 🔌 Conectar dos contendores en una red interna
+
