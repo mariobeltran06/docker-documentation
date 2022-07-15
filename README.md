@@ -172,8 +172,33 @@ El parámetro <code>-t</code> significa identificar con nombre y tag a la constr
 ```sh
 docker build -t <name_image>:<tag_name> <path_to_dockerfile>
 
-docker build -t myApp:1 . #Ejemplo
+docker build -t my-app:1 . #Ejemplo
 ```
 
 ## 🔌 Conectar dos contendores en una red interna
 
+El parámetro <code>--network</code> significa seleccionar la red interna que se encontrara el contenedor 
+
+```sh
+#Ejemplo
+
+#Contenedor de Base de Datos(mongo)
+docker create -p27018:27017 --name dbnet --network netapp -e MONGO_INITDB_ROOT_USERNAME=mario -e MONGO_INITDB_ROOT_PASSWORD=password mongo
+
+#Contenedor de la aplicación
+docker create -p3000:3000 --name apiAnimal --network netapp my-app:1
+```
+
+## 📖 Docker Compose
+
+### Comando para ejecutar todas las instrucciones
+
+```sh
+docker compose up
+```
+
+### Comando para remover los contenedores creados
+
+```sh
+docker compose down
+```
