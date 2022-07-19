@@ -202,3 +202,20 @@ docker compose up
 ```sh
 docker compose down
 ```
+
+### Comando para especificar un archivo Docker compose
+
+El parámetro <code>-f</code> significa especificar el archivo de docker compose personalizado.
+
+```sh
+docker compose -f <path_file> up
+
+docker compose -f docker-compose-dev.yml up #Ejemplo
+```
+
+## 💾 Volúmenes
+
+Tipos:
+ - Anónimo: solo indicas la ruta
+ - Anfitrión o Host
+ - Nombrado
